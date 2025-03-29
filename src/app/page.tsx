@@ -17,7 +17,7 @@ export default async function Dashboard() {
             <CardTitle className="text-sm font-bold">Total Categories</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{categoriesCount}</div>
+            <div className="text-2xl font-bold">{categoriesCount | 0}</div>
           </CardContent>
         </Card>
       </div>
@@ -27,7 +27,7 @@ export default async function Dashboard() {
             <CardTitle className="text-sm font-bold">Total Products</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{productsCount}</div>
+            <div className="text-2xl font-bold">{productsCount | 0}</div>
           </CardContent>
         </Card>
       </div>
