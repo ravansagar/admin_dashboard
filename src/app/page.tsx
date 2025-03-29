@@ -2,11 +2,22 @@ import DashboardShell from "@/components/dashboardShell";
 import DashboardHeader from "@/components/dashboardHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getCategories, getProducts } from "@/server/actions";
+import { useState, useEffect } from "react";
 
-export default async function Dashboard() {
+export default function Dashboard() {
+  const [categoriesCount, setCategoriesCount] = useState(0);
+  const [productsCount, setProductsCount] = useState(0);
 
-  const categoriesCount = (await getCategories()).length;
-  const productsCount = (await getProducts()).length;
+  useEffect(() => {
+    async function fetchData() {
+      const categories = await getCategories();
+      const products = await getProducts();
+      setCategoriesCount(categories.length);
+      setProductsCount(products.length);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <DashboardShell>
