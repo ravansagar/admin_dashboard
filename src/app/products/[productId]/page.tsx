@@ -1,7 +1,6 @@
 import DashboardHeader from "@/components/dashboardHeader";
 import DashboardShell from "@/components/dashboardShell";
 import ProductForm from "@/components/productForm";
-import { NextPage } from "next";
 
 interface editProduct {
     params: {
@@ -9,8 +8,7 @@ interface editProduct {
     }
 }
 
-const EditProductPage: NextPage<editProduct> = ({ params }) => {      
-    
+export default function EditProductPage({ params }: editProduct) {
     const productIdNumber = Number((params as { productId: string }).productId);
 
     return (
@@ -22,4 +20,3 @@ const EditProductPage: NextPage<editProduct> = ({ params }) => {
         </DashboardShell>
     );
 }
-export default EditProductPage;
