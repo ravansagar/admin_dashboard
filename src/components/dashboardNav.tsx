@@ -4,10 +4,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, ShoppingBag, FolderTree, LogOut } from "lucide-react";
+import { useAuth } from '@clerk/nextjs';
+import { RedirectToSignIn } from '@clerk/clerk-react';
 
 export default function DashboardNav() {
     const pathName = usePathname();
+    const { isLoaded, isSignedIn, signOut } = useAuth();
 
+    if(!isLoaded) {
+        return <div className="text-center mx-2">Loading...</div>
+    }
+    if(!isSignedIn){
+        return <RedirectToSignIn />
+    }
+    const handleLogout = async () => {
+        try {
+            await signOut(); 
+            return <RedirectToSignIn />;
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
+    };
     const routes = [
         {
             href: '/',
@@ -51,7 +68,7 @@ export default function DashboardNav() {
                 </div>
             </div>
             <div className="mt-auto pb-8">
-                <Button variant="ghost" className="w-full justify-start text-red-500">
+                <Button variant="ghost" className="w-full justify-start text-red-500" onClick={handleLogout}>
                     <LogOut className="mr-2 h-4 w-4" />
                     Logout
                 </Button>

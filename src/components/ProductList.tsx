@@ -13,7 +13,6 @@ import { getProducts, deleteProduct } from "@/server/actions";
 
 export default function ProductList() {
     const [products, setProducts] = useState<any[]>([]);
-    const router = useRouter();
     useEffect(() => {
         const fetchProducts = async () => {
             try {

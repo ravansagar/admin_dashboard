@@ -4,8 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getCategories, getProducts } from "@/server/actions";
 
 export default async function Dashboard() {
-  // const session = await getSession();
-  // if(!session) redirect('/login');
 
   const categoriesCount = (await getCategories()).length;
   const productsCount = (await getProducts()).length;

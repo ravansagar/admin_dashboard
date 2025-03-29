@@ -6,8 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import ProductList from "@/components/ProductList";
+import { useAuth, RedirectToSignIn } from "@clerk/nextjs";
 
 export default function ProductsPage() {
+    const { isSignedIn } = useAuth();
+    if(!isSignedIn){
+        return <RedirectToSignIn />;
+    }
     return (
         <DashboardShell>
             <DashboardHeader heading="Products" text="Manage products">

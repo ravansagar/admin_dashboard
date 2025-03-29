@@ -8,7 +8,7 @@ interface editProduct {
     }
 }
 
-export default function editProductPage({ params }: editProduct) {
+function editProductPage({ params }: editProduct) {
     return (
         <DashboardShell>
             <DashboardHeader heading="Edit Product" text="Update product details" />
