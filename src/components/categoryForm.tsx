@@ -21,7 +21,14 @@ const formSchema = z.object({
     })
 })
 
-export function CategoryForm({category} : {category?: any}){
+interface Category {
+  id: number;
+  name: string;
+  imageUrl: string;
+}
+
+
+export function CategoryForm({category} : {category?: Category}){
     const [error, setError] = useState('');
     const router = useRouter();
     const [loading, setLoading] = useState(false);

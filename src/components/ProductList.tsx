@@ -10,8 +10,21 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { getProducts, deleteProduct } from "@/server/actions";
 
+interface Product {
+    id: number;
+    name: string;
+    price: number | null;
+    description: string | null;
+    imageUrl: string | null;
+    categoryId: number | null;
+    initialStock: number;
+    availableStock: number;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+}
+
 export default function ProductList() {
-    const [products, setProducts] = useState<any[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -48,7 +61,7 @@ export default function ProductList() {
                             <TableCell className="font-medium">{product.price}</TableCell>
                             <TableCell>
                                 <div className="h-16 w-16 relative rounded-md overflow-hidden">
-                                    <Image src={product.imageUrl} alt={product.name} fill className="object-cover"/>
+                                    <Image src={product.imageUrl || ''} alt={product.name} fill className="object-cover"/>
                                 </div>
                             </TableCell>
                             <TableCell className="hidden md:table-cell max-w-[200px] pl-16 truncate">{product.description}</TableCell>

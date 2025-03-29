@@ -1,4 +1,4 @@
-import { pgTable, serial, text, varchar, integer, timestamp, foreignKey } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, varchar, integer, timestamp } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 export const categories = pgTable('categories', {

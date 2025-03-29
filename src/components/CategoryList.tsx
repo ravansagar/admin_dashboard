@@ -9,8 +9,17 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogCancel, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { deleteCategory, getCategories, getCategoryProductCounts } from "@/server/actions";
 
+interface Category {
+    id: number;
+    name: string;
+    imageUrl: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+} 
+  
+
 export default function CategoryList() {
-    const [categories, setCategories] = useState<any[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
     const [productCounts, setProductCounts] = useState<{ [key: string]: number }>({});
 
     useEffect(() => {
@@ -41,7 +50,7 @@ export default function CategoryList() {
             {categories.map((category) => (
                 <Card key={category.id} className="overflow-hidden">
                     <div className="aspect-video w-full relative">
-                        <Image src={category.imageUrl} alt={category.name} fill className="object-cover h-1 w-4" />
+                        <Image src={category.imageUrl || ''} alt={category.name} fill className="object-cover h-1 w-4" />
                     </div>
                     <CardHeader>
                         <CardTitle>{category.name}</CardTitle>

@@ -39,12 +39,30 @@ const formSchema = z.object({
     })
 })
 
+interface Category {
+    id: number;
+    name: string;
+    imageUrl: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+} 
 
-export default function ProductForm({ product }: { product?: any }) {
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+    imageUrl: string;
+    categoryId: number;
+    initialStock: number;
+    availableStock: number;
+}
+
+export default function ProductForm({ product }: { product?: Product }) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const [categories, setCategories] = useState<any[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
     const [productData, setProductData] = useState<{ name: string, price: number, description: string, imageUrl: string, categoryId: number, initialStock: number; availableStock: number } | null>(null);
 
     const form = useForm<z.infer<typeof formSchema>>({
