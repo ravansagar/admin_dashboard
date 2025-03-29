@@ -13,7 +13,7 @@ export default function editCategoryPage({params}: CategoryPageProps){
         <DashboardShell>
             <DashboardHeader heading="Edit Category" text="Update category details" />
             <div className="grid gap-8">
-                <CategoryForm category={{ id: Number(params.categoryId) }} />
+                <CategoryForm category={{ id: Number(params.categoryId), name: '', imageUrl: '' }} />
             </div>
         </DashboardShell>
     );
