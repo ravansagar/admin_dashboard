@@ -2,11 +2,11 @@ import DashboardShell from "@/components/dashboardShell";
 import DashboardHeader from "@/components/dashboardHeader";
 import { CategoryForm } from "@/components/categoryForm";
 
-interface CategoryPageProps {
+interface editCategory {
   params: { categoryId: string }; 
 }
 
-const EditCategoryPage = ({ params }: CategoryPageProps) => {
+const EditCategoryPage = ({ params }: editCategory) => {
   const categoryIdNumber = Number(params.categoryId);
 
   return (
