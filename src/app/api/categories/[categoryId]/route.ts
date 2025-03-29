@@ -10,7 +10,7 @@ export async function PUT(request: Request, { params }: { params: { categoryId: 
     try {
         const newCategory = await updateCategory(categoryId, { name, imageUrl });
         return NextResponse.json(newCategory, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Something went wrong while updating the category." }, { status: 500 });
     }
 }
