@@ -7,7 +7,7 @@ interface CategoryPageProps {
 }
 
 export default function editCategoryPage({ params }: CategoryPageProps) {
-  const categoryIdNumber = Number((params as { categoryId: string }).categoryId); // Type assertion
+  const categoryIdNumber = Number((params as { categoryId: string }).categoryId);
   return (
     <DashboardShell>
       <DashboardHeader heading="Edit Category" text="Update category details" />
