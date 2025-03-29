@@ -58,8 +58,7 @@ export default function CategoryList() {
                     </CardHeader>
                     <CardFooter className="flex justify-between">
                         <Button variant="outline" size="sm" asChild>
-                            {/* API Call */}
-                            <Link href={`/categories/${category.id}`}>
+                            <Link href={`/products/${category.id}`}>
                                 <Edit className="mr-2 h-4 w-4" />
                                 Edit
                             </Link>

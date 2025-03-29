@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { updateCategory } from "@/server/actions";
 
 export async function PUT(request: Request, { params }: { params: { categoryId: string } }) {
-    const parsedCategoryId = parseInt(params.categoryId, 10);
     const { name, imageUrl } = await request.json();
 
     if (!name || !imageUrl) {
@@ -11,9 +10,10 @@ export async function PUT(request: Request, { params }: { params: { categoryId: 
             { status: 400 }
         );
     }
+    const categoryId = Number(params.categoryId);
 
     try {
-        const newCategory = await updateCategory(parsedCategoryId, { name, imageUrl });
+        const newCategory = await updateCategory(categoryId, { name, imageUrl });
         return NextResponse.json(newCategory, { status: 200 });
     } catch {
         return NextResponse.json(
