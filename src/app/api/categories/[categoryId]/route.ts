@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 import { updateCategory } from '@/server/actions';
-import { NextRequest } from 'next/server'; 
 
-export async function PUT(req: NextRequest, context: { params: { categoryId: string } }) {
-    const { categoryId } = context.params; 
+export async function PUT(req: Request) {
+
+    const url = new URL(req.url);
+    const categoryId = url.pathname.split('/').pop() || "0";
+
     const parsedCategoryId = parseInt(categoryId, 10);
     if (isNaN(parsedCategoryId)) {
         return NextResponse.json({ error: 'Invalid categoryId.' }, { status: 400 });
