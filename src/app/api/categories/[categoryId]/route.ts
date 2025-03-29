@@ -18,7 +18,7 @@ export async function PUT(req: NextRequest, context: { params: { categoryId: str
     try {
         const newCategory = await updateCategory(parsedCategoryId, { name, imageUrl });
         return NextResponse.json(newCategory, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Something went wrong while updating the category.' }, { status: 500 });
     }
 }
