@@ -1,16 +1,15 @@
 import DashboardHeader from "@/components/dashboardHeader";
 import DashboardShell from "@/components/dashboardShell";
 import ProductForm from "@/components/productForm";
+import { NextResponse } from "next/server";
 
-interface editProduct {
-    params: {
-        productId: string
+export default function EditProductPage(req: Request) {
+    const url = new URL(req.url);
+    const productId = url.pathname.split('/').pop() || "0";
+    const productIdNumber = Number(productId);
+    if (isNaN(productIdNumber)) {
+        return NextResponse.json({ error: 'Invalid categoryId.' }, { status: 400 });
     }
-}
-
-export default function EditProductPage({ params }: editProduct) {
-    const productIdNumber = Number((params as { productId: string }).productId);
-
     return (
         <DashboardShell>
             <DashboardHeader heading="Edit Product" text="Update product details" />
