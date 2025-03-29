@@ -1,12 +1,13 @@
 import DashboardShell from "@/components/dashboardShell";
 import DashboardHeader from "@/components/dashboardHeader";
 import { CategoryForm } from "@/components/categoryForm";
+import { NextPage } from "next";
 
 interface CategoryPageProps {
   params: { categoryId: string };
 }
 
-export default function EditCategoryPage({ params }: CategoryPageProps) {
+const EditCategoryPage: NextPage<CategoryPageProps> = ({ params }) => {    
     const categoryIdNumber = Number(params.categoryId);
     return (
     <DashboardShell>
@@ -17,3 +18,5 @@ export default function EditCategoryPage({ params }: CategoryPageProps) {
     </DashboardShell>
   );
 }
+
+export default EditCategoryPage;
