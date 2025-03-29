@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { updateCategory } from "@/server/actions";
 
 export async function PUT(request: Request, { params }: { params: { categoryId: string } }) {
+    const categoryId = parseInt(params.categoryId, 10);
+
+    if (isNaN(categoryId)) {
+        return NextResponse.json({ error: "Invalid categoryId." }, { status: 400 });
+    }
     const { name, imageUrl } = await request.json();
 
     if (!name || !imageUrl) {
@@ -10,7 +15,6 @@ export async function PUT(request: Request, { params }: { params: { categoryId: 
             { status: 400 }
         );
     }
-    const categoryId = Number(params.categoryId);
 
     try {
         const newCategory = await updateCategory(categoryId, { name, imageUrl });
