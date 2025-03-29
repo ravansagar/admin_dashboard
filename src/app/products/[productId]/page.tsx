@@ -1,7 +1,7 @@
 import DashboardHeader from "@/components/dashboardHeader";
 import DashboardShell from "@/components/dashboardShell";
 import ProductForm from "@/components/productForm";
-import { getProduct } from "@/server/actions";
+
 interface editProduct {
     params: {
         productId: string
