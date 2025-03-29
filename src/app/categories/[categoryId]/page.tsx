@@ -4,16 +4,17 @@ import { CategoryForm } from "@/components/categoryForm";
 
 interface CategoryPageProps {
     params: {
-        categoryId: number
+        categoryId: string;
     }
 }
 
 export default function editCategoryPage({params}: CategoryPageProps){
+    const categoryIdNumber = Number(params.categoryId);
     return (
         <DashboardShell>
             <DashboardHeader heading="Edit Category" text="Update category details" />
             <div className="grid gap-8">
-                <CategoryForm category={{ id: Number(params.categoryId), name: '', imageUrl: '' }} />
+                <CategoryForm category={{ id: categoryIdNumber, name: '', imageUrl: '' }} />
             </div>
         </DashboardShell>
     );
