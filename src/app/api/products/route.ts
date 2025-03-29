@@ -11,7 +11,7 @@ export async function POST(request: Request){
     try {
         const newProduct = await createProducts({ name, price, description, imageUrl, initialStock, availableStock, categoryId });
         return NextResponse.json(newProduct, {status: 200});
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Something went wrong while creating the product." }, { status: 500 });
     }
 }

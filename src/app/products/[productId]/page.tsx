@@ -4,11 +4,11 @@ import ProductForm from "@/components/productForm";
 
 interface editProduct {
     params: {
-        productId: String
+        productId: string
     }
 }
 
-function editProductPage({ params }: editProduct) {
+function EditProductPage({ params }: editProduct) {
     return (
         <DashboardShell>
             <DashboardHeader heading="Edit Product" text="Update product details" />

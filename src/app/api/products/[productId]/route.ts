@@ -13,7 +13,7 @@ export async function PUT(request: Request, { params }: { params: { productId: s
     try {
         const newProduct = await updateProduct( productId, { name, price, description, imageUrl, initialStock, availableStock, categoryId }); 
         return NextResponse.json(newProduct, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Something went wrong while updating product." }, { status: 500 });
     }
 }

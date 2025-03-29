@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     try {
         const newCategory = await createCategory({name, imageUrl}); 
         return NextResponse.json(newCategory, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Something went wrong while creating the category." }, { status: 500 });
     }
 }

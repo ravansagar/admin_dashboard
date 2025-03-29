@@ -7,7 +7,7 @@ import Link from "next/link";
 import CategoryList from "@/components/CategoryList";
 import { useAuth, RedirectToSignIn } from "@clerk/nextjs";
 
-export default function categoriesPage(){
+export default function CtegoriesPage(){
     const { isSignedIn } = useAuth();
     if(!isSignedIn){
         return <RedirectToSignIn />;
