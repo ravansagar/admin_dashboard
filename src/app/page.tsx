@@ -1,12 +1,12 @@
 import DashboardShell from "@/components/dashboardShell";
 import DashboardHeader from "@/components/dashboardHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getCategories, getProducts } from "@/server/actions";
+// import { getCategories, getProducts } from "@/server/actions";
 
-export default async function Dashboard() {
+export default  function Dashboard() {
 
-  const categoriesCount = (await getCategories()).length;
-  const productsCount = (await getProducts()).length;
+  // const categoriesCount = (await getCategories()).length;
+  // const productsCount = (await getProducts()).length;
 
   return (
     <DashboardShell>
@@ -17,7 +17,7 @@ export default async function Dashboard() {
             <CardTitle className="text-sm font-bold">Total Categories</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{categoriesCount}</div>
+            <div className="text-2xl font-bold">10</div>
           </CardContent>
         </Card>
       </div>
@@ -27,7 +27,7 @@ export default async function Dashboard() {
             <CardTitle className="text-sm font-bold">Total Products</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{productsCount}</div>
+            <div className="text-2xl font-bold">10</div>
           </CardContent>
         </Card>
       </div>
