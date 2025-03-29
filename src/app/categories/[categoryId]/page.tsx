@@ -6,9 +6,9 @@ interface CategoryPageProps {
   params: { categoryId: string };
 }
 
-export default function editCategoryPage({ params }: CategoryPageProps) {
-  const categoryIdNumber = Number((params as { categoryId: string }).categoryId);
-  return (
+export default function EditCategoryPage({ params }: CategoryPageProps) {
+    const categoryIdNumber = Number(params.categoryId);
+    return (
     <DashboardShell>
       <DashboardHeader heading="Edit Category" text="Update category details" />
       <div className="grid gap-8">
