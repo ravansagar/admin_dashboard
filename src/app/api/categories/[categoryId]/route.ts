@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { updateCategory } from "@/server/actions";
 
-export async function PUT(request: Request, context: { params: { categoryId: string } }) {
-    const { categoryId } = context.params;
-
-    const parsedCategoryId = parseInt(categoryId, 10);
+export async function PUT(request: Request, { params } : { params: string }) {
+    const parsedCategoryId = parseInt(params, 10);
     const { name, imageUrl } = await request.json();
 
     if (!name || !imageUrl) {
