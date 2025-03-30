@@ -3,7 +3,7 @@ import { relations } from 'drizzle-orm';
 
 export const categories = pgTable('categories', {
     id: serial('id').primaryKey(),
-    name: varchar('name', {length: 40}).notNull(),
+    name: varchar('name', { length: 40 }).notNull(),
     imageUrl: text('imageUrl'),
     createdAt: timestamp('createdAt').defaultNow(),
     updatedAt: timestamp('updatedAt').defaultNow(),
@@ -11,7 +11,7 @@ export const categories = pgTable('categories', {
 
 export const products = pgTable('products', {
     id: serial('id').primaryKey(),
-    name: varchar('name', {length: 40}).notNull(),
+    name: varchar('name', { length: 40 }).notNull(),
     description: text('description'),
     imageUrl: text('imageUrl'),
     price: integer('price'),
@@ -26,7 +26,7 @@ export const products = pgTable('products', {
 
 export const productRelations = relations(products, ({ one }) => ({
     category: one(categories, {
-      fields: [products.categoryId],
-      references: [categories.id],
+        fields: [products.categoryId],
+        references: [categories.id],
     }),
-  }));
+}));

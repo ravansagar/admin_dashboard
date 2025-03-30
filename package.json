@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "migrate": "tsx scripts/migrate.ts",
-    "migrate:prod": "NODE_ENV=production tsx scripts/migrate.ts",
-    "generate": "drizzle-kit generate:pg --out ./drizzle/migrations --schema ./src/lib/schema.ts",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
