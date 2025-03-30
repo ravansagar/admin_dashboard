@@ -1,20 +1,10 @@
 import type { Config } from "drizzle-kit";
-import dotenv from "dotenv";
-import path from "path";
-
-dotenv.config({ path: path.resolve(__dirname, ".env.local") });
 
 export default {
   schema: "./drizzle/schema.ts",
   out: "./drizzle/migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.DATABASE_URL!,
+    url: `${process.env.DATABASE_URL}?connect_timeout=30`,
   },
-  migrations: {
-    table: "migrations",
-    schema: "public",
-  },
-  verbose: true,
-  strict: true,
 } satisfies Config;
