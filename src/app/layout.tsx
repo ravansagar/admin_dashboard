@@ -1,5 +1,5 @@
 import React from "react";
-import  { Inter } from "next/font/google";
+import  { Inter } from "next/font/google/index";
 import "./globals.css";
 import DashboardNav from "../components/dashboardNav";
 import { ClerkProvider } from '@clerk/nextjs'
