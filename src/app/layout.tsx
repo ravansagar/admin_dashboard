@@ -1,7 +1,7 @@
 import React from "react";
 import  { Inter } from "next/font/google";
 import "./globals.css";
-import DashboardNav from "@/components/dashboardNav";
+import DashboardNav from "../components/dashboardNav";
 import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets : ["latin"]});
