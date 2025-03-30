@@ -1,32 +1,33 @@
 import { migrate } from 'drizzle-orm/postgres-js/migrator';
-import { db } from '@/lib/db/db';
 import postgres from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import dotenv from 'dotenv';
 import path from 'path';
 
-const runMigrations = async () => {
+dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
+
+async function runMigrations() {
   if (!process.env.DATABASE_URL) {
-    throw new Error('DATABASE_URL environment variable is not set');
+    throw new Error('DATABASE_URL is not defined');
   }
 
-  console.log('Running migrations...');
-  
-  const migrationClient = postgres(process.env.DATABASE_URL, {
+  const migrationClient = postgres(process.env.DATABASE_URL, { 
     max: 1,
     ssl: 'require'
   });
 
   try {
+    const db = drizzle(migrationClient);
     await migrate(db, {
-      migrationsFolder: path.join(__dirname, 'migrations')
+      migrationsFolder: path.resolve(__dirname, './migrations')
     });
     console.log('Migrations completed successfully');
-  } catch (error) {
-    console.error('Migration failed:', error);
+  } catch (err) {
+    console.error('Migration failed:', err);
     process.exit(1);
   } finally {
     await migrationClient.end();
-    process.exit(0);
   }
-};
+}
 
 runMigrations();
