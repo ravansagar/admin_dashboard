@@ -1,11 +1,11 @@
 "use client"
 
-import DashboardShell from "@/components/dashboardShell";
-import DashboardHeader from "@/components/dashboardHeader";
-import { Button } from "@/components/ui/button";
+import DashboardShell from "../../components/dashboardShell";
+import DashboardHeader from "../../components/dashboardHeader";
+import { Button } from "../../components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
-import ProductList from "@/components/ProductList";
+import ProductList from "../../components/ProductList";
 import { useAuth, RedirectToSignIn } from "@clerk/nextjs";
 
 export default function ProductsPage() {
