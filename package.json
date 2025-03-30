@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-
+    "migrate": "tsx drizzle/migrate.ts",
+    "migrate:prod": "NODE_ENV=production tsx drizzle/migrate.ts",
+    "generate": "drizzle-kit generate:pg --out ./drizzle/migrations --schema ./src/lib/db/schema.ts"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.25.5",
