@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateProduct } from "@/server/actions";
+import { updateProduct } from "../../../../server/actions";
 
 export async function PUT(req: Request) {
     const url = new URL(req.url);

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createCategory } from "@/server/actions";
+import { createCategory } from "../../../server/actions";
 
 export async function POST(request: Request) {
     const { name, imageUrl } = await request.json();

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createProducts } from "@/server/actions";
+import { createProducts } from "../../../server/actions";
 
 export async function POST(request: Request){
     const { name, price, description, imageUrl, initialStock, availableStock, categoryId } = await request.json();

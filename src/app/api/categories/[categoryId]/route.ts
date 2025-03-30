@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { updateCategory } from '@/server/actions';
+import { updateCategory } from '../../../../server/actions';
 
 export async function PUT(req: Request) {
 

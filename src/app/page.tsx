@@ -3,7 +3,7 @@
 import DashboardShell from "../components/dashboardShell";
 import DashboardHeader from "../components/dashboardHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { getCategories, getProducts } from "@/server/actions";
+import { getCategories, getProducts } from "../server/actions";
 import { useState, useEffect } from "react";
 
 export default function Dashboard() {

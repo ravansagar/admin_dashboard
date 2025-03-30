@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import { LayoutDashboard, ShoppingBag, FolderTree, LogOut } from "lucide-react";
 import { useAuth } from '@clerk/nextjs';
 import { RedirectToSignIn } from '@clerk/clerk-react';

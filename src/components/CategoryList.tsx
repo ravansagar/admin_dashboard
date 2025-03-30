@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Edit, Trash2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogCancel, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { deleteCategory, getCategories, getCategoryProductCounts } from "@/server/actions";
+import { Button } from "./ui/button";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogCancel, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogTrigger } from "./ui/alert-dialog";
+import { deleteCategory, getCategories, getCategoryProductCounts } from "../server/actions";
 
 interface Category {
     id: number;

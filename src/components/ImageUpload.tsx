@@ -4,7 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Upload, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 
 interface ImageUploadProps {
     value: string
