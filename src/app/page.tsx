@@ -13,6 +13,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function fetchData() {
       const categories = await getCategories();
+      console.log(categories);
       const products = await getProducts();
       setCategoriesCount(categories.length);
       setProductsCount(products.length);

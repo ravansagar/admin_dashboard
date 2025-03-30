@@ -17,11 +17,16 @@ export const products = pgTable('products', {
     price: integer('price'),
     initialStock: integer('initialStock').notNull(),
     availableStock: integer('availableStock').notNull(),
-    categoryId: integer('categoryId').references(() => categories.id),
+    categoryId: integer('categoryId').references(() => categories.id, {
+        onDelete: 'set null'
+    }),
     createdAt: timestamp('createdAt').defaultNow(),
     updatedAt: timestamp('updatedAt').defaultNow(),
 });
 
-export const productRelations = relations(products, ({ many }) => ({
-    category: many(categories),
-}));
+export const productRelations = relations(products, ({ one }) => ({
+    category: one(categories, {
+      fields: [products.categoryId],
+      references: [categories.id],
+    }),
+  }));
