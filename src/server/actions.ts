@@ -1,8 +1,8 @@
 "use server"
 
-import { db } from "@/lib/db/db";
-import { categories } from "@/lib/db/schema";
-import { products } from "@/lib/db/schema";
+import { db } from "../lib/db/db";
+import { categories } from "../lib/db/schema";
+import { products } from "../lib/db/schema";
 import { eq } from "drizzle-orm";
 
 interface categoryAdd {
