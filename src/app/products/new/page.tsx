@@ -1,8 +1,8 @@
 "use client"
 
-import DashboardHeader from "@/components/dashboardHeader";
-import DashboardShell from "@/components/dashboardShell";
-import ProductForm from "@/components/productForm";
+import DashboardHeader from "../../../components/dashboardHeader";
+import DashboardShell from "../../../components/dashboardShell";
+import ProductForm from "../../../components/productForm";
 import { useAuth, RedirectToSignIn } from "@clerk/nextjs";
 
 export default function NewProduct() {

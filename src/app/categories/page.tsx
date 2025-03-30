@@ -1,9 +1,9 @@
 "use client"
 
 import React from "react";
-import DashboardHeader from "@/components/dashboardHeader";
-import DashboardShell from "@/components/dashboardShell";
-import { Button } from "@/components/ui/button";
+import DashboardHeader from "../../components/dashboardHeader";
+import DashboardShell from "../../components/dashboardShell";
+import { Button } from "../../components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import CategoryList from "@/components/CategoryList";

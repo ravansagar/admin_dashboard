@@ -1,8 +1,8 @@
 "use client"
 
-import DashboardShell from "@/components/dashboardShell";
-import DashboardHeader from "@/components/dashboardHeader";
-import { CategoryForm } from "@/components/categoryForm";
+import DashboardShell from "../../../components/dashboardShell";
+import DashboardHeader from "../../../components/dashboardHeader";
+import { CategoryForm } from "../../../components/categoryForm";
 import { useParams } from "next/navigation";
 
 

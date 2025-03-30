@@ -1,8 +1,8 @@
 "use client"
 
-import DashboardHeader from "@/components/dashboardHeader";
-import DashboardShell from "@/components/dashboardShell";
-import ProductForm from "@/components/productForm";
+import DashboardHeader from "../../../components/dashboardHeader";
+import DashboardShell from "../../../components/dashboardShell";
+import ProductForm from "../../../components/productForm";
 import { useParams } from "next/navigation";
 
 export default function EditProductPage() {

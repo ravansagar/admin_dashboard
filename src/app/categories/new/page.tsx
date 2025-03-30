@@ -1,8 +1,8 @@
 "use client"
 
-import DashboardHeader from "@/components/dashboardHeader";
-import DashboardShell from "@/components/dashboardShell";
-import { CategoryForm } from "@/components/categoryForm";
+import DashboardHeader from "../../../components/dashboardHeader";
+import DashboardShell from "../../../components/dashboardShell";
+import { CategoryForm } from "../../../components/categoryForm";
 import { useAuth, RedirectToSignIn } from "@clerk/nextjs";
 
 export default function NewCategory(){
